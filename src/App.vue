@@ -1,14 +1,10 @@
 <template>
   <div id="app">
     <div class="h-center padding-sides">
-      <video
-        src="./assets/umbra.mp4"
-        playsinline
-        autoplay
-        muted
-        loop
-        class="w-video"
-      ></video>
+      <video playsinline preload autoplay muted loop class="w-video">
+        <source src="./assets/umbra.mp4" type="video/mp4" />
+        Sorry, your browser doesn't support embedded videos.
+      </video>
       <div class="margin-top relative w-full h-auto">
         <h2 class="light absolute">
           An inmersive experience to find yourself.
