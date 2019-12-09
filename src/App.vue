@@ -47,6 +47,20 @@ body * {
   transition: filter 2s ease-in-out;
 }
 
+@font-face {
+  font-family: "Tiempos Headline";
+  src: local("Tiempos Headline Light"),
+    url("./assets/fonts/TiemposHeadline-Light.otf") format("otf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Tiempos Headline";
+  src: local("Tiempos Headline Regular"),
+    url("./assets/fonts/TiemposHeadline-Regular.otf") format("otf");
+  font-weight: 500;
+}
+
 .relative {
   top: 0;
   left: 0;
@@ -117,8 +131,10 @@ a {
   transition: filter 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-a:hover {
-  filter: blur(0.55rem);
+@media screen and (min-width: 650px) {
+  a:hover {
+    filter: blur(0.55rem);
+  }
 }
 .h-center {
   height: 80%;
