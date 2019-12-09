@@ -42,7 +42,8 @@ body * {
   font-family: serif;
   text-align: center;
   height: 100%;
-  font-family: "Tiempos Headline Light", Times, serif;
+  font-family: "Tiempos Headline", Times, serif;
+  font-weight: 300;
   filter: blur(0.07rem);
   transition: filter 2s ease-in-out;
 }
@@ -58,7 +59,7 @@ body * {
   font-family: "Tiempos Headline";
   src: local("Tiempos Headline Regular"),
     url("./assets/fonts/TiemposHeadline-Regular.otf") format("otf");
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .relative {
@@ -90,10 +91,12 @@ h3 {
 }
 
 .light {
-  font-family: "Tiempos Headline Light", Times, serif;
+  font-family: "Tiempos Headline", Times, serif;
+  font-weight: 300;
 }
 .regular {
-  font-family: "Tiempos Headline Regular", Times, serif;
+  font-family: "Tiempos Headline", Times, serif;
+  font-weight: 400;
 }
 
 .w-full {
@@ -106,7 +109,8 @@ h2 {
 }
 
 h3 {
-  font-family: "Tiempos Headline Regular", Times, serif;
+  font-family: "Tiempos Headline", Times, serif;
+  font-weight: 400;
   font-size: 3rem;
 
   font-weight: normal;
