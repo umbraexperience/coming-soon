@@ -5,11 +5,13 @@
         <source src="./assets/umbra.mp4" type="video/mp4" />
         Sorry, your browser doesn't support embedded videos.
       </video>
-      <div class="margin-top relative w-full h-auto">
-        <h2 class="light absolute">
+
+      <div class="title-container w-full">
+        <h2 class="title font-light absolute">
           An inmersive experience to find yourself.
         </h2>
-        <h3 class="absolute">Coming Soon</h3>
+
+        <h3 class="sub-title absolute font-regular">Coming Soon</h3>
       </div>
     </div>
 
@@ -51,6 +53,29 @@ body * {
   transition: filter 2s ease-in-out;
 }
 
+.text-animation {
+  background: linear-gradient(
+    140deg,
+    rgba(2, 2, 2, 1) 20%,
+    rgba(80, 80, 80, 1) 50%,
+    rgba(2, 2, 2, 1) 80%
+  );
+
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+
+  background-size: 200% auto;
+  animation: textShine 6s linear infinite;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 200%;
+  }
+}
+
 @font-face {
   font-family: "Tiempos Headline";
   src: local("Tiempos Headline Light"),
@@ -65,13 +90,6 @@ body * {
   font-weight: 400;
 }
 
-.relative {
-  top: 0;
-  left: 0;
-  right: 0;
-  position: relative;
-}
-
 .absolute {
   top: 0;
   left: 0;
@@ -80,24 +98,36 @@ body * {
   padding: 0;
 }
 
-.margin-top {
-  margin-top: 2rem;
-}
-
-h2 {
+.title {
   z-index: 10;
+  background: -webkit-linear-gradient(
+    140deg,
+    rgba(8, 8, 8, 1) 31%,
+    rgba(94, 94, 94, 1) 52%,
+    rgba(11, 11, 11, 1) 72%
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-h3 {
+.sub-title {
   z-index: 5;
-
-  opacity: 0.12;
+  background: -webkit-linear-gradient(
+    140deg,
+    rgba(2, 2, 2, 1) 30%,
+    rgba(20, 20, 20, 1) 50%,
+    rgba(2, 2, 2, 1) 70%
+  );
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.light {
+.font-light {
   font-family: "Tiempos Headline", Times, serif;
   font-weight: 300;
 }
-.regular {
+.font-regular {
   font-family: "Tiempos Headline", Times, serif;
   font-weight: 400;
 }
@@ -106,36 +136,55 @@ h3 {
   width: 100%;
 }
 
-h2 {
+.title-container {
+  margin-top: 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+}
+
+.title {
   font-size: 1.15rem;
   font-weight: normal;
 }
 
-h3 {
-  font-family: "Tiempos Headline", Times, serif;
-  font-weight: 400;
+.sub-title {
   font-size: 3rem;
 
   font-weight: normal;
   margin-top: -0.7rem;
 }
 @media screen and (min-width: 650px) {
-  h3 {
+  .sub-title {
     font-size: 4.2rem;
     margin-top: -1.3rem;
   }
 }
 
 @media screen and (min-width: 650px) {
-  h2 {
+  .title {
     font-size: 1.3rem;
   }
 }
 a {
   text-decoration: none;
-  font-weight: 600;
   font-size: 1.2rem;
-  transition: filter 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: filter 0.2s ease-in-out, -webkit-text-fill-color 0.4s ease-in-out;
+
+  background: linear-gradient(
+    140deg,
+    rgba(2, 2, 2, 1) 20%,
+    rgba(80, 80, 80, 1) 50%,
+    rgba(2, 2, 2, 1) 80%
+  );
+
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-size: 200% auto;
+  animation: textShine 7s linear infinite;
 }
 
 @media screen and (min-width: 650px) {
