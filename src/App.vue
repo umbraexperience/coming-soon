@@ -8,10 +8,11 @@
 
       <div class="title-container w-full">
         <h2 class="title font-light absolute">
-          An inmersive experience to find yourself.
+          <span>An inmersive experience to find yourself.</span>
         </h2>
-
-        <h3 class="sub-title absolute font-regular">Coming Soon</h3>
+        <h3 class="sub-title absolute font-regular">
+          <span>Coming Soon</span>
+        </h3>
       </div>
     </div>
 
@@ -51,29 +52,7 @@ body * {
   font-weight: 300;
   filter: blur(0.07rem);
   transition: filter 2s ease-in-out;
-}
-
-.text-animation {
-  background: linear-gradient(
-    140deg,
-    rgba(2, 2, 2, 1) 20%,
-    rgba(80, 80, 80, 1) 50%,
-    rgba(2, 2, 2, 1) 80%
-  );
-
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-
-  background-size: 200% auto;
-  animation: textShine 6s linear infinite;
-}
-
-@keyframes textShine {
-  to {
-    background-position: 200%;
-  }
+  overflow: hidden;
 }
 
 @font-face {
@@ -96,31 +75,88 @@ body * {
   right: 0;
   position: absolute;
   padding: 0;
+  margin: 0;
 }
 
 .title {
+  font-size: 1.15rem;
+  font-weight: normal;
+  white-space: nowrap;
+
+  top: 1.65rem;
   z-index: 10;
-  background: -webkit-linear-gradient(
+}
+.title span {
+  background: linear-gradient(
     140deg,
-    rgba(8, 8, 8, 1) 31%,
-    rgba(94, 94, 94, 1) 52%,
-    rgba(11, 11, 11, 1) 72%
+    rgba(8, 8, 8, 1) 20%,
+    rgba(94, 94, 94, 1) 50%,
+    rgba(11, 11, 11, 1) 80%
   );
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  background-size: 200% auto;
+  animation: textShine 6s linear infinite;
 }
 .sub-title {
+  font-size: 3rem;
+  font-weight: normal;
+  white-space: nowrap;
+
   z-index: 5;
-  background: -webkit-linear-gradient(
+}
+
+.sub-title span {
+  background: linear-gradient(
     140deg,
-    rgba(2, 2, 2, 1) 30%,
-    rgba(20, 20, 20, 1) 50%,
-    rgba(2, 2, 2, 1) 70%
+    rgb(4, 4, 4) 30%,
+    rgb(20, 20, 20) 50%,
+    rgb(4, 4, 4) 70%
   );
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 8s linear infinite;
+}
+
+.text-animation {
+  background: linear-gradient(
+    140deg,
+    rgba(2, 2, 2, 1) 20%,
+    rgba(80, 80, 80, 1) 50%,
+    rgba(2, 2, 2, 1) 80%
+  );
+
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+
+  background-size: 200% auto;
+  animation: textShine 8s linear infinite;
+}
+
+@keyframes textShine {
+  to {
+    background-position: -200%;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .sub-title {
+    font-size: 4.2rem;
+    margin-top: -1.3rem;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .title {
+    top: 1.2rem;
+    font-size: 1.3rem;
+  }
 }
 
 .font-light {
@@ -137,36 +173,15 @@ body * {
 }
 
 .title-container {
-  margin-top: 2rem;
+  margin: 0;
+  padding: 0;
   top: 0;
   left: 0;
   right: 0;
   position: relative;
+  text-align: center;
 }
 
-.title {
-  font-size: 1.15rem;
-  font-weight: normal;
-}
-
-.sub-title {
-  font-size: 3rem;
-
-  font-weight: normal;
-  margin-top: -0.7rem;
-}
-@media screen and (min-width: 650px) {
-  .sub-title {
-    font-size: 4.2rem;
-    margin-top: -1.3rem;
-  }
-}
-
-@media screen and (min-width: 650px) {
-  .title {
-    font-size: 1.3rem;
-  }
-}
 a {
   text-decoration: none;
   font-size: 1.2rem;
@@ -200,7 +215,7 @@ a {
   align-items: center;
 }
 .padding-sides {
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 .bottom {
   position: absolute;
