@@ -200,6 +200,7 @@ a {
 
   background-size: 200% auto;
   animation: textShine 7s linear infinite;
+  animation-delay: -3s;
 }
 
 @media screen and (min-width: 650px) {
