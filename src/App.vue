@@ -7,16 +7,19 @@
       </video>
 
       <div class="title-container w-full">
-        <h2 class="title font-light absolute">
-          <span>An inmersive experience to find yourself.</span>
-        </h2>
-        <h3 class="sub-title absolute font-regular">
+        <div>
+          <h2 class="title font-light absolute animation2" ref="element2">
+            An inmersive experience to find yourself.
+          </h2>
+        </div>
+
+        <!--         <h3 class="sub-title absolute font-regular">
           <span>Coming Soon</span>
-        </h3>
+        </h3> -->
       </div>
     </div>
 
-    <div class="bottom">
+    <div class="bottom animation" ref="element">
       <a href="https://paypal.me/pools/c/8kxzH2J8F0" class="regular"
         >Contribute</a
       >
@@ -27,7 +30,27 @@
 <script>
 export default {
   name: "app",
-  components: {}
+  components: {},
+  mounted() {
+    const targets = this.$refs.element;
+    targets.innerHTML = targets.textContent.replace(
+      /\S/g,
+      "<span class='letter'>$&</span>"
+    );
+
+    const targets2 = this.$refs.element2;
+    targets2.innerHTML = targets2.textContent.replace(
+      /\S/g,
+      "<span class='letter'>$&</span>"
+    );
+    this.$anime({
+      targets: ".animation2 .letter",
+      opacity: [0, 1],
+      easing: "easeInOutQuad",
+      loop: true,
+      delay: this.$anime.stagger(100)
+    });
+  }
 };
 </script>
 
@@ -85,7 +108,7 @@ body * {
 
   top: 1.65rem;
   z-index: 10;
-}
+} /* 
 .title span {
   background: linear-gradient(
     140deg,
@@ -98,7 +121,11 @@ body * {
   -webkit-text-fill-color: transparent;
 
   background-size: 200% auto;
-  animation: textShine 6s linear infinite;
+  animation: textShine 6s linear infinite; 
+}*/
+
+.animation {
+  opacity: 0;
 }
 .sub-title {
   font-size: 3rem;
@@ -108,7 +135,7 @@ body * {
   z-index: 5;
 }
 
-.sub-title span {
+/* .sub-title span {
   background: linear-gradient(
     140deg,
     rgb(4, 4, 4) 30%,
@@ -120,7 +147,7 @@ body * {
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: textShine 8s linear infinite;
-}
+} */
 
 .text-animation {
   background: linear-gradient(
@@ -187,7 +214,7 @@ a {
   font-size: 1.2rem;
   transition: filter 0.2s ease-in-out, -webkit-text-fill-color 0.4s ease-in-out;
 
-  background: linear-gradient(
+  /*   background: linear-gradient(
     140deg,
     rgba(2, 2, 2, 1) 20%,
     rgba(80, 80, 80, 1) 50%,
@@ -200,7 +227,7 @@ a {
 
   background-size: 200% auto;
   animation: textShine 7s linear infinite;
-  animation-delay: -3s;
+  animation-delay: -3s; */
 }
 
 @media screen and (min-width: 650px) {
