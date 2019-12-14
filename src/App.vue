@@ -7,21 +7,24 @@
       </video>
 
       <div class="title-container w-full noselect">
-        <div>
+        <div class="gradient">
           <h2 class="title font-light absolute animation2" ref="element2">
             An inmersive experience to find yourself.
           </h2>
         </div>
-      <div>
-        <h3 class="sub-title absolute font-regular animation" ref="element">
-          <span>Coming Soon</span>
-        </h3>
+        <div>
+          <h3 class="sub-title absolute font-regular animation" ref="element">
+            <span>Coming Soon</span>
+          </h3>
         </div>
       </div>
     </div>
 
     <div class="bottom noselect">
-      <a href="https://paypal.me/pools/c/8kxzH2J8F0" class="animation3 regular"   ref="element3"
+      <a
+        href="https://paypal.me/pools/c/8kxzH2J8F0"
+        class="animation3 regular"
+        ref="element3"
         >Contribute</a
       >
     </div>
@@ -33,7 +36,6 @@ export default {
   name: "app",
   components: {},
   mounted() {
-
     this.$refs.element2.innerHTML = this.$refs.element2.textContent.replace(
       /\S/g,
       "<span class='letter'>$&</span>"
@@ -43,7 +45,7 @@ export default {
       "<span class='letter'>$&</span>"
     );
 
-        this.$refs.element3.innerHTML = this.$refs.element3.textContent.replace(
+    this.$refs.element3.innerHTML = this.$refs.element3.textContent.replace(
       /\S/g,
       "<span class='letter'>$&</span>"
     );
@@ -57,34 +59,23 @@ export default {
       loop: true
     });
 
-      this.$anime({
+    this.$anime({
       targets: ".animation .letter",
       keyframes: [{ opacity: 1 }, { opacity: 0 }],
       easing: "easeInOutQuad",
       duration: 8500,
-      delay: this.$anime.stagger(220, {start: 4800}),
+      delay: this.$anime.stagger(220, { start: 4800 }),
       loop: true
     });
 
-      this.$anime({
+    this.$anime({
       targets: ".animation3 .letter",
       keyframes: [{ opacity: 1 }, { opacity: 0 }],
       easing: "easeInOutQuad",
       duration: 5000,
-      delay: this.$anime.stagger(220, {start: 1000}),
+      delay: this.$anime.stagger(220, { start: 1000 }),
       loop: true
     });
-
-/*         this.$anime({
-      targets: "#app",
-      translateX: 4,
-      translateY: 4,
-      direction: 'alternate',
-      easing: "easeInOutQuad",
-      duration: 400,
-      loop: true
-    }); */
-
   }
 };
 </script>
@@ -98,10 +89,9 @@ body {
 }
 body {
   background-color: black;
-}
-body * {
   color: #b4b4b4;
 }
+
 #app {
   font-family: serif;
   text-align: center;
@@ -129,11 +119,11 @@ body * {
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
 }
 
@@ -146,7 +136,9 @@ body * {
   margin: 0;
 }
 
-.animation2 .letter, .animation .letter,  .animation3 .letter{
+.animation2 .letter,
+.animation .letter,
+.animation3 .letter {
   opacity: 0;
 }
 
@@ -157,17 +149,6 @@ body * {
 
   top: 1.65rem;
   z-index: 10;
-
-    background: linear-gradient(
-    140deg,
-    rgba(0, 0, 0, 1) 20%,
-    rgba(255,255, 255, 1) 50%,
-    rgba(0, 0, 0, 1) 80%
-  );
-
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .sub-title {
@@ -176,31 +157,7 @@ body * {
   white-space: nowrap;
 
   z-index: 5;
-
-  background: linear-gradient(
-    120deg,
-    rgba(0, 0, 0, 1) 35%,
-    rgba(55, 55, 55, 1) 50%,
-    rgba(0, 0, 0, 1) 65%
-  );
-
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-}
-
-.text-animation {
-  background: linear-gradient(
-    140deg,
-    rgba(2, 2, 2, 1) 20%,
-    rgba(80, 80, 80, 1) 50%,
-    rgba(2, 2, 2, 1) 80%
-  );
-
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #202020;
 }
 
 @media screen and (min-width: 650px) {
@@ -244,18 +201,7 @@ a {
   text-decoration: none;
   font-size: 1.2rem;
   transition: filter 0.2s ease-in-out, -webkit-text-fill-color 0.4s ease-in-out;
-
-
-    background: linear-gradient(
-    120deg,
-  rgba(80, 80, 80, 1) 5%,
-    rgba(255,255, 255, 1) 50%,
-    rgba(80, 80,80, 1) 95%
-  );
-
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #747474;
 }
 
 @media screen and (min-width: 650px) {
