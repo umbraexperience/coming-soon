@@ -48,8 +48,8 @@ export default {
       keyframes: [{ opacity: 1 }, { opacity: 0 }],
 
       easing: "easeInOutQuad",
-      duration: 5000,
-      delay: this.$anime.stagger(160),
+      duration: 6500,
+      delay: this.$anime.stagger(180),
       loop: true
     });
   }
