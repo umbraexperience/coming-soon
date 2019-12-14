@@ -45,10 +45,12 @@ export default {
     );
     this.$anime({
       targets: ".animation2 .letter",
-      opacity: [0, 1],
+      keyframes: [{ opacity: 1 }, { opacity: 0 }],
+
       easing: "easeInOutQuad",
-      loop: true,
-      delay: this.$anime.stagger(100)
+      duration: 5000,
+      delay: this.$anime.stagger(160),
+      loop: true
     });
   }
 };
@@ -99,6 +101,10 @@ body * {
   position: absolute;
   padding: 0;
   margin: 0;
+}
+
+.animation2 .letter {
+  opacity: 0;
 }
 
 .title {
