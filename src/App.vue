@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <div class="h-center padding-sides">
-      <video playsinline preload autoplay muted loop class="w-video">
+      <video preload autoplay muted loop class="w-video">
         <source src="./assets/umbra.mp4" type="video/mp4" />
         Sorry, your browser doesn't support embedded videos.
       </video>
 
       <div class="title-container w-full noselect">
-        <div class="gradient">
+        <div>
           <h2 class="title font-light absolute animation2" ref="element2">
             An inmersive experience to find yourself.
           </h2>
@@ -98,8 +98,6 @@ body {
   height: 100%;
   font-family: "Tiempos Headline", Times, serif;
   font-weight: 300;
-  filter: blur(0.07rem);
-  transition: filter 2s ease-in-out;
   overflow: hidden;
 }
 
@@ -149,6 +147,8 @@ body {
 
   top: 1.65rem;
   z-index: 10;
+
+  filter: blur(0.08rem);
 }
 
 .sub-title {
@@ -157,7 +157,8 @@ body {
   white-space: nowrap;
 
   z-index: 5;
-  color: #202020;
+  color: #0c0c0c;
+  filter: blur(0.15rem);
 }
 
 @media screen and (min-width: 650px) {
@@ -200,6 +201,7 @@ body {
 a {
   text-decoration: none;
   font-size: 1.2rem;
+  filter: blur(0.08rem);
   transition: filter 0.2s ease-in-out, -webkit-text-fill-color 0.4s ease-in-out;
   color: #747474;
 }
