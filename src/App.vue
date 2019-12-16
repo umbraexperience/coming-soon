@@ -35,12 +35,24 @@
         >Contribute</a
       >
     </div>
+
+    <sound-button
+      :src="['./assets/sound/coming_soon_2.ogg']"
+      :autoplay="true"
+    />
   </div>
 </template>
 
 <script>
+// import { Howl } from "howler";
+
 export default {
   name: "app",
+  data: function() {
+    return {
+      sound: ""
+    };
+  },
   components: {},
   mounted() {
     this.$refs.element2.innerHTML = this.$refs.element2.textContent.replace(
@@ -83,6 +95,17 @@ export default {
       delay: this.$anime.stagger(220, { start: 1000 }),
       loop: true
     });
+
+    /*     this.sound = new Howl({
+      src: ["./assets/sound/coming_soon_2.ogg"]
+    }); */
+
+    // Clear listener after first call.
+  },
+  methods: {
+    /*     play: function() {
+      this.sound.play();
+    } */
   }
 };
 </script>
@@ -97,6 +120,7 @@ body {
 body {
   background-color: black;
   color: #b4b4b4;
+  overflow: hidden;
 }
 
 #app {
@@ -105,7 +129,6 @@ body {
   height: 100%;
   font-family: "Tiempos Headline", Times, serif;
   font-weight: 300;
-  overflow: hidden;
 }
 
 @font-face {

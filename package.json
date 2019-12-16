@@ -10,8 +10,10 @@
   "dependencies": {
     "animejs": "^3.1.0",
     "core-js": "^3.5.0",
+    "howler": "^2.1.2",
     "vue": "^2.6.11",
-    "vue-animejs": "^2.1.1"
+    "vue-animejs": "^2.1.1",
+    "vue-howler-button": "0.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.1",
