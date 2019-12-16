@@ -36,10 +36,14 @@
       >
     </div>
 
-    <sound-button
-      :src="['./assets/sound/coming_soon_2.ogg']"
-      :autoplay="true"
-    />
+    <p>
+      <label>localStorage.isSoundEnabled</label>
+      <code>"{{ isSoundEnabled }}"</code>
+
+      <button type="button" @click="clearStorage">clear</button>
+    </p>
+
+    <sound-button :src="src" :autoplay="true" />
   </div>
 </template>
 
@@ -50,11 +54,16 @@ export default {
   name: "app",
   data: function() {
     return {
-      sound: ""
+      isSoundEnabled: null,
+      src: ["./assets/sound/sound.ogg", "./assets/sound/sound.mp3"]
     };
   },
   components: {},
   mounted() {
+    setInterval(() => {
+      this.isSoundEnabled = localStorage && localStorage.isSoundEnabled;
+    }, 100);
+
     this.$refs.element2.innerHTML = this.$refs.element2.textContent.replace(
       /\S/g,
       "<span class='letter'>$&</span>"
@@ -103,9 +112,11 @@ export default {
     // Clear listener after first call.
   },
   methods: {
-    /*     play: function() {
-      this.sound.play();
-    } */
+    clearStorage() {
+      if (localStorage) {
+        localStorage.removeItem("isSoundEnabled");
+      }
+    }
   }
 };
 </script>
