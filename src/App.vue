@@ -1,7 +1,14 @@
 <template>
   <div id="app">
     <div class="h-center padding-sides">
-      <video preload autoplay muted loop class="w-video">
+      <video
+        preload
+        autoplay
+        muted
+        loop
+        class="w-video"
+        poster="./assets/logo.png"
+      >
         <source src="./assets/umbra.mp4" type="video/mp4" />
         Sorry, your browser doesn't support embedded videos.
       </video>
