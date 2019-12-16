@@ -35,15 +35,6 @@
         >Contribute</a
       >
     </div>
-
-    <p>
-      <label>localStorage.isSoundEnabled</label>
-      <code>"{{ isSoundEnabled }}"</code>
-
-      <button type="button" @click="clearStorage">clear</button>
-    </p>
-
-    <sound-button :src="src" :autoplay="true" />
   </div>
 </template>
 
@@ -53,10 +44,7 @@
 export default {
   name: "app",
   data: function() {
-    return {
-      isSoundEnabled: null,
-      src: ["./assets/sound/sound.ogg", "./assets/sound/sound.mp3"]
-    };
+    return {};
   },
   components: {},
   mounted() {
@@ -108,16 +96,8 @@ export default {
     /*     this.sound = new Howl({
       src: ["./assets/sound/coming_soon_2.ogg"]
     }); */
-
-    // Clear listener after first call.
   },
-  methods: {
-    clearStorage() {
-      if (localStorage) {
-        localStorage.removeItem("isSoundEnabled");
-      }
-    }
-  }
+  methods: {}
 };
 </script>
 
