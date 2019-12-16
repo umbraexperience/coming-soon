@@ -157,7 +157,7 @@ body {
   white-space: nowrap;
 
   z-index: 5;
-  color: #0c0c0c;
+  color: #0f0f0f;
   filter: blur(0.15rem);
 }
 
