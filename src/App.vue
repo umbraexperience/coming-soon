@@ -7,7 +7,7 @@
         muted
         loop
         class="w-video"
-        poster="./assets/logo.png"
+        poster="./assets/umbra_poster.jpg"
       >
         <source src="./assets/umbra.mp4" type="video/mp4" />
         Sorry, your browser doesn't support embedded videos.
